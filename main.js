@@ -62,9 +62,9 @@ function getJSONP(stuff) {
     
     // Figure out which section of data to return
     var leftBound = (10 * dispMult - 9);
-    console.log("Left bound is " + leftBound);
+    // console.log("Left bound is " + leftBound);
     var rightBound = leftBound + 10;
-    console.log("Right bound is " + rightBound);
+    // console.log("Right bound is " + rightBound);
     if (rightBound > numHits) {
         rightBound = numHits;
     }
@@ -72,7 +72,7 @@ function getJSONP(stuff) {
     
     // Create a script object, then use its source as the API's specified search address using the most recent search term from the array of search terms. The callback function will run automatically.
     var incomingScript = document.createElement('script');
-    console.log("https://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP");
+    // console.log("https://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP");
     incomingScript.src = "https://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP";
     
     // Append the script to page
@@ -89,7 +89,7 @@ function searchLib() {
     var s = document.getElementsByName("sTerm")[0]; // Get the first instance of the element named sTerm in my document
     // If the search term contains characters that are not whitespace or "undefined"
     if (!!s.value && s.value.trim() && s.value !== "undefined") {
-        console.log("Does array contain? " + $.inArray(s.value, prevSearchTerms));
+        // console.log("Does array contain? " + $.inArray(s.value, prevSearchTerms));
         firstSearch = true; // At least one search has been accomplished, so now you can use next and previous
         
         // If array does not already contain the value, add it
@@ -111,7 +111,7 @@ function searchLib() {
 
     // Cleanup and move pstPos to the latest search term (which will always be the last in the array)
     s.value = '';
-    console.log(prevSearchTerms);
+    // console.log(prevSearchTerms);
     pstPos = prevSearchTerms.length - 1;
     // console.log("pstPos is " + pstPos);
 }
@@ -143,7 +143,7 @@ function prev10() {
             getJSONP(tempSearchTerm);
         }
     } else {
-        console.log("Can't click that yet");
+        // console.log("Can't click that yet");
     }
 }
 
@@ -156,7 +156,7 @@ function next10() {
             getJSONP(tempSearchTerm);
         }
     } else {
-        console.log("Can't click that yet");
+        // console.log("Can't click that yet");
     }
 }
 
@@ -174,16 +174,6 @@ function hideAllPrev() {
     var showBox = document.getElementById("showBox");
     showBox.style.visibility = "hidden";
 }
-
-$("#sTextBox").on("keypress", function () {
-    console.log("Trying something!");
-    fillWithPrev();
-    searchLib();
-});
-
-$("#sTextBox").on("focus", function() {
-    console.log("has focus");
-});
 
 // Init function
 window.onload = function () {
