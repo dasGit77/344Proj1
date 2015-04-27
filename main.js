@@ -73,7 +73,7 @@ function getJSONP(stuff) {
     // Create a script object, then use its source as the API's specified search address using the most recent search term from the array of search terms. The callback function will run automatically.
     var incomingScript = document.createElement('script');
     console.log("http://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP");
-    incomingScript.src = "http://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP";
+    incomingScript.src = "https://loc.gov/pictures/search/?q=" + stuff + "&si=" + leftBound + "&c=" + rightBound +"&fo=json&callback=createPageFromJSONP";
     
     // Append the script to page
     document.getElementsByTagName('head')[0].appendChild(incomingScript);
