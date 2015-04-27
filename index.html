@@ -1,0 +1,54 @@
+<!--
+CSCI 344 Project 1
+Nicholas Blum
+3.23.2015
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSCI 344 Project 1</title>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> <!--JQuery script-->
+<script src="main.js"></script> <!--My Javascript script-->
+<link rel=stylesheet type="text/css" href="style.css"> <!--My CSS stylesheet-->
+</head>
+<body>
+    <div id="main">
+        <div class="searchBar" id="sDiv">
+            <h3>Please submit a request</h3>
+            <input type="text" name="sTerm" class="searchText" id="sTextBox">
+            <br><br>
+            <input type="button" value="Search" class="searchButton" onclick="searchLib()">
+            <br><br>
+            <input type="button" value="Previous Term" class="searchButton" onclick="fillWithPrev()">
+            <br><br>
+            <input type="button" value="See All Terms" class="searchButton" onclick="showAllPrev()">           
+        </div>
+        <div class="showContainer">
+            <div class="showBox" id="showBox">
+                <div id="showBoxText">
+                    <ol id="showBoxList"></ol>
+                </div>
+            </div>
+        </div>
+        <div class="contentView">
+            <h1>Search the Library of Congress!</h1>
+            <div id="hits"></div>
+            <br>
+                <form>
+			     <input type="button" class="searchButton leftButton smallButton" value="Previous 10" onclick="prev10()">
+			     <input type="button" class="searchButton leftButton smallButton" value="Next 10" onclick="next10()">
+                </form>
+			<br>
+            <br>
+            <br>
+            <div id="results">Please enter a search term.</div> <!-- Dynamically fills with the results from the search! -->
+            <p>
+            API Information: <a href="http://www.programmableweb.com/api/library-congress-prints-photographs">Programmable Web: Library of Congress</a><br>
+            API Source: <a href="http://www.loc.gov/pictures/api#HTML_and_JSON_for_every_URL_16">Library of Congress API</a><br>
+            <br>
+            </p>
+            
+        </div>
+    </div>
+</body>
+</html>
